@@ -25,6 +25,7 @@ canvas {
 header {
     margin:32px;
     position: absolute;
+    z-index: 0;
 }
 
 .row {
