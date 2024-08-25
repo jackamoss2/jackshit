@@ -7,7 +7,7 @@ body {
     position:relative;
     bottom:150px;
     left:150px;
-    /* background-color:blueviolet; */
+    background-color:black;
 }
 
 h1,h2 {
@@ -15,16 +15,16 @@ h1,h2 {
     margin:0;
 }
 
-header {
-    margin:32px;
-    position: absolute;
-}
-
 canvas {
-    /* position: fixed; */
+    position: fixed;
     top: 0;
     left: 0;
     z-index: -1;
+}
+
+header {
+    margin:32px;
+    position: absolute;
 }
 
 .row {
