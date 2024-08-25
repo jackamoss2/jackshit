@@ -20,6 +20,13 @@ header {
     position: absolute;
 }
 
+canvas {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -1;
+}
+
 .row {
     display: table;
     table-layout: auto;
