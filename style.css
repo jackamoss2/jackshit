@@ -14,7 +14,7 @@ h1,h2 {
 
 header {
     margin:32px;
-    /* position: absolute; */
+    position: absolute;
 }
 
 .row {
