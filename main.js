@@ -248,7 +248,7 @@ function animate() {
         
         // get elevation from simulation matrix, assign to geometry vertex
         const amplification = 2;
-        const z = u[1][xMatrix][yMatrix] * amplification;
+        const z = 0.9*u[1][xMatrix][yMatrix] * amplification;
         geometry.attributes.position.setZ(i, z);
     }
     geometry.computeVertexNormals();
