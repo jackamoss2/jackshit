@@ -4,7 +4,6 @@ html, body {
 
 body {
     font-family: "Oswald", sans-serif;
-    position:relative;
     bottom:150px;
     left:150px;
     background-color:black;
@@ -25,7 +24,7 @@ canvas {
 header {
     margin:32px;
     position: absolute;
-    z-index: -2;
+    z-index: 0;
 }
 
 .row {
