@@ -30,6 +30,8 @@ header {
 .row {
     display: table;
     table-layout: auto;
+    margin:18px;
+    margin-left:48px;
 }
 .column {
     display: table-cell;
@@ -42,6 +44,16 @@ header {
 }
 
 #header-home h1,h2 {
-    margin-left:16px;
-    margin-right:16px;
+    margin-left:8px;
+    margin-right:8px;
+    display: inline-block;
+    transform: scale(1, 1.5);
+    /* Safari and Chrome */
+    -webkit-transform: scale(1, .5);
+    /* Firefox */
+    -moz-transform: scale(1, .5);
+    /* IE 9+ */
+    -ms-transform: scale(1, .5);
+    /* Opera */
+    -o-transform: scale(1, .5);
 }
