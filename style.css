@@ -47,13 +47,9 @@ header {
     margin-left:8px;
     margin-right:8px;
     display: inline-block;
-    transform: scale(1, 1.5);
-    /* Safari and Chrome */
+    /* transform: scale(1, 1.5);
     -webkit-transform: scale(1, .5);
-    /* Firefox */
     -moz-transform: scale(1, .5);
-    /* IE 9+ */
     -ms-transform: scale(1, .5);
-    /* Opera */
-    -o-transform: scale(1, .5);
+    -o-transform: scale(1, .5); */
 }
