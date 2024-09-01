@@ -43,7 +43,7 @@ scene.add(new THREE.AmbientLight(0xffffff, 0.5));
 const dirLight = new THREE.DirectionalLight(0xbfb58f, 1.0)
 
 //temp
-const geometry2 = new THREE.SphereGeometry(5,5)
+const geometry2 = new THREE.SphereGeometry( 15, 32, 16 ); 
 const material2 = new THREE.MeshBasicMaterial({
     color:0xffffff,
 })
