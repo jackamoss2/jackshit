@@ -53,7 +53,7 @@ sphere.position.setZ(0);
 sphere.position.setX(-90);
 sphere.position.setY(30);
 
-// scene.add(sphere);
+scene.add(sphere);
     
 
 
