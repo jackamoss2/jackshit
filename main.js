@@ -50,8 +50,8 @@ const material2 = new THREE.MeshBasicMaterial({
 const sphere = new THREE.Mesh(geometry2, material2);
 
 sphere.position.setZ(0);
-sphere.position.setX(-90);
-sphere.position.setY(30);
+sphere.position.setX(0);
+sphere.position.setY(0);
 
 scene.add(sphere);
 console.log('loaded sphere')    
