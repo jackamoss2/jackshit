@@ -4,8 +4,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-import { message } from "./geometry/convertXMLSurface.js"
-console.log(message);
+import { surface } from "./geometry/convertXMLSurface.js"
+console.log(surface);
 
 
 const scene = new THREE.Scene();
@@ -22,7 +22,7 @@ document.body.appendChild( renderer.domElement );
 scene.add(new THREE.AmbientLight(0xffffff, 0.5));
 const dirLight = new THREE.DirectionalLight(0xbfb58f, 1.0);
 dirLight.position.x += 50
-dirLight.position.y += 20
+dirLight.position.y += 80
 dirLight.position.z += 40
 dirLight.castShadow = true
 dirLight.shadow.mapSize.width = 4096;
@@ -34,7 +34,7 @@ dirLight.shadow.camera.top = d;
 dirLight.shadow.camera.bottom = - d;
 
 let target = new THREE.Object3D();
-target.position.z = -30;
+// target.position.z = -30;
 dirLight.target = target;
 dirLight.target.updateMatrixWorld();
 
