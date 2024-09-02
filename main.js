@@ -4,8 +4,8 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-
-
+import { message } from "./geometry/convertXMLSurface.js"
+console.log(message);
 
 
 const scene = new THREE.Scene();
@@ -16,14 +16,6 @@ const renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerWidth, window.innerHeight );
 renderer.setAnimationLoop( animate );
 document.body.appendChild( renderer.domElement );
-
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshStandardMaterial( {
-    color: 0x00ff00,
-    // wireframe: true
-} );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
 
 
 // lighting
@@ -62,3 +54,13 @@ camera.position.z = 5;
 const controls = new OrbitControls(camera, renderer.domElement);
 controls.target = new THREE.Vector3(0, 0, 0);
 controls.update();
+
+
+// insert geometry
+const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+const material = new THREE.MeshStandardMaterial( {
+    color: 0xffaa55,
+    // wireframe: true
+} );
+const cube = new THREE.Mesh( geometry, material );
+scene.add( cube );
