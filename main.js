@@ -4,7 +4,7 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-import { surface } from "./geometry/convertXMLSurface.js"
+import { surface } from "jackamoss2.github.io/geometry/convertXMLSurface.js"
 console.log(surface);
 
 
