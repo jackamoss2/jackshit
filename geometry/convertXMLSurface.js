@@ -1,6 +1,6 @@
 var surface = {};
 
-domain = 'jackamoss2.github.io'
+const domain = 'jackamoss2.github.io'
 
 fetch('http://' + domain + '/geometry/2_Faces.xml')
   .then(response => response.text())
