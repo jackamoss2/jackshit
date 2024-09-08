@@ -5,7 +5,7 @@ import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
 
-// import {readXML} from './geometry/convertXMLSurface.js';
+import {readXML} from './geometry/convertXMLSurface.js';
 
 
 
@@ -36,6 +36,7 @@ dirLight.shadow.camera.top = d;
 dirLight.shadow.camera.bottom = - d;
 
 let target = new THREE.Object3D();
+// target.position.z = -30;
 dirLight.target = target;
 dirLight.target.updateMatrixWorld();
 
@@ -48,7 +49,7 @@ function animate() {
 }
 
 
-// controls/camera setup
+// controls setup
 camera.position.x = -3;
 camera.position.y = 5;
 camera.position.z = 5;
@@ -65,15 +66,3 @@ const material = new THREE.MeshStandardMaterial( {
 } );
 const cube = new THREE.Mesh( geometry, material );
 scene.add( cube );
-
-
-
-const heightOutput = document.querySelector("#height");
-const widthOutput = document.querySelector("#width");
-
-function resizeCanvas() {
-  heightOutput.textContent = window.innerHeight;
-  widthOutput.textContent = window.innerWidth;
-}
-
-window.onresize = reportWindowSize;
