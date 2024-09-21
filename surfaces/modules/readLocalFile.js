@@ -1,3 +1,5 @@
+// this module reads a server-side file
+
 function loadFile(filePath) {
     var result = null;
     var xmlhttp = new XMLHttpRequest();
@@ -9,6 +11,4 @@ function loadFile(filePath) {
     return result;
   }
 
-let surfaceXML = loadFile("./geometry/2_Faces.xml");
-
-export default surfaceXML;
+export default loadFile;

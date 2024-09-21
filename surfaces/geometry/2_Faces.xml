@@ -36,6 +36,7 @@
 		<Surface name="2_Faces" desc="Description">
 			<SourceData>
 				<Breaklines>
+					<!-- use below breakline description field to identify section (conc, grass, etc.)? -->
 					<Breakline brkType="standard" desc="Breakline set1">
 						<PntList3D>7404.494913983624 2535.489324186929 6. 7418.944134490564 2572.109767353162 3. 7378.004709075671 2581.746730607934 4. 7375.596508629154 2531.634561821353 2.5</PntList3D>
 						<Feature code="BreakLine" source="Autodesk Civil 3D">
@@ -48,6 +49,7 @@
 					</Breakline>
 				</Breaklines>
 			</SourceData>
+			<!-- FIRST: determine how to reference below Definition data in js - can i reference XML directly? -->
 			<Definition surfType="TIN" area2DSurf="1538.672617543059" area3DSurf="1546.307519290252" elevMax="6." elevMin="2.5">
 				<Pnts>
 					<P id="5">7404.494913983624 2535.489324186929 6.</P>
@@ -55,7 +57,10 @@
 					<P id="7">7378.004709075671 2581.746730607934 4.</P>
 					<P id="8">7375.596508629154 2531.634561821353 2.5</P>
 				</Pnts>
+				<!-- below n values: http://www.landxml.org/schema/landxml-1.2/documentation/LandXML-1.2Doc_F.html -->
+				<!-- (n is connected face ID, with implied IDs by order, starting at 1, and 0 is no adjacent face) -->
 				<Faces>
+					<!-- SECOND: generate three.js planes with below face data (face=plane?), referencing point data -->
 					<F n="0 0 2">7 6 5</F>
 					<F n="0 1 0">8 7 5</F>
 				</Faces>

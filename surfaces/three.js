@@ -7,7 +7,7 @@ import { OrbitControls } from 'OrbitControls';
 
 // import {readXML} from './geometry/convertXMLSurface.js';
 
-import surfaceXML from "./transformXML.js";
+import surfaceXML from "./modules/readLocalFile.js";
 console.log(surfaceXML);
 
 
