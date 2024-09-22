@@ -4,8 +4,8 @@ html, body {
 
 body {
     font-family: "Oswald", sans-serif;
-    bottom:150px;
-    left:150px;
+    /* bottom:150px;
+    left:150px; */
     /* background-color:black; */
 }
 
@@ -26,11 +26,11 @@ canvas {
     z-index: -1;
 }
 
-header {
+/* .header-canvas {
     margin:32px;
     position: absolute;
     z-index: 0;
-}
+} */
 
 .row {
     display: table;

@@ -4,11 +4,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-
-// import {readXML} from './geometry/convertXMLSurface.js';
-
-import surfaceXML from "./modules/readLocalFile.js";
-console.log(surfaceXML);
+// geometry imports
+import readLocalFile from "./modules/readLocalFile.js";
+import xmlToThreeSurface from './modules/xmlToThreeSurface.js';
 
 
 const scene = new THREE.Scene();
@@ -22,6 +20,17 @@ renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
 document.body.appendChild(renderer.domElement);
 
+renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setSize(window.innerWidth, window.innerHeight);
+
+window.addEventListener("resize", onWindowResize, false);
+
+function onWindowResize() {
+  camera.aspect = window.innerWidth / window.innerHeight;
+  camera.updateProjectionMatrix();
+
+  renderer.setSize(window.innerWidth, window.innerHeight);
+}
 
 // lighting
 scene.add(new THREE.AmbientLight(0xffffff, 0.5));
@@ -50,7 +59,6 @@ function animate() {
 	renderer.render( scene, camera );
 };
 
-
 // controls/camera setup
 camera.position.x = -3;
 camera.position.y = 5;
@@ -61,24 +69,41 @@ controls.update();
 
 
 // insert geometry
-const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-const material = new THREE.MeshStandardMaterial( {
-    color: 0xffaa55,
-    // wireframe: true
+// const geometry = new THREE.BoxGeometry( 1, 1, 1 );
+// const material = new THREE.MeshStandardMaterial( {
+//     color: 0xffaa55,
+//     // wireframe: true
+// } );
+// const cube = new THREE.Mesh( geometry, material );
+// scene.add( cube );
+
+const geometry = new THREE.BufferGeometry();
+
+const vertices = new Float32Array( [
+	-1.0, -1.0,  1.0, // v0
+	 1.0, -1.0,  1.0, // v1
+	 1.0,  1.0,  1.0, // v2
+	-1.0,  1.0,  1.0, // v3
+] );
+
+const indices = [
+	0, 1, 2,
+	2, 3, 0,
+];
+
+geometry.setIndex( indices );
+geometry.setAttribute( 'position', new THREE.BufferAttribute( vertices, 3 ) );
+
+const material = new THREE.MeshBasicMaterial( {
+  color: 0xff0000,
+  wireframe: true
 } );
-const cube = new THREE.Mesh( geometry, material );
-scene.add( cube );
+const mesh = new THREE.Mesh( geometry, material );
+scene.add( mesh );
+
+let dataSource = "2_Faces.xml";
+let xmlDataString = readLocalFile("./geometry/" + dataSource);
+let threeSurface = xmlToThreeSurface(xmlDataString);
 
 
-
-renderer.setPixelRatio(window.devicePixelRatio);
-renderer.setSize(window.innerWidth, window.innerHeight);
-
-window.addEventListener("resize", onWindowResize, false);
-
-function onWindowResize() {
-  camera.aspect = window.innerWidth / window.innerHeight;
-  camera.updateProjectionMatrix();
-
-  renderer.setSize(window.innerWidth, window.innerHeight);
-}
+// console.log(threeSurface);
