@@ -2,8 +2,8 @@
 
 import * as THREE from 'three';
 
-import xmlExtractSurface from './modules/xmlExtractSurface.js';
-import xmlExtractSurfacePoints from './modules/xmlExtractSurfacePoints.js';
+import xmlExtractSurface from './xmlExtractSurface.js';
+import xmlExtractSurfacePoints from './xmlExtractSurfacePoints.js';
 
 function generateSurface(xmlDataString) {
     const xmlSurface = xmlExtractSurface(xmlDataString);
