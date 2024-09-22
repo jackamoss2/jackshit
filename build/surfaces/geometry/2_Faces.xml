@@ -49,7 +49,6 @@
 					</Breakline>
 				</Breaklines>
 			</SourceData>
-			<!-- FIRST: determine how to reference below Definition data in js - can i reference XML directly? -->
 			<Definition surfType="TIN" area2DSurf="1538.672617543059" area3DSurf="1546.307519290252" elevMax="6." elevMin="2.5">
 				<Pnts>
 					<P id="5">7404.494913983624 2535.489324186929 6.</P>
@@ -60,7 +59,6 @@
 				<!-- below n values: http://www.landxml.org/schema/landxml-1.2/documentation/LandXML-1.2Doc_F.html -->
 				<!-- (n is connected face ID, with implied IDs by order, starting at 1, and 0 is no adjacent face) -->
 				<Faces>
-					<!-- SECOND: generate three.js planes with below face data (face=plane?), referencing point data -->
 					<F n="0 0 2">7 6 5</F>
 					<F n="0 1 0">8 7 5</F>
 				</Faces>
