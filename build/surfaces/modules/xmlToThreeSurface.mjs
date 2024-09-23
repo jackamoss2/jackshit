@@ -23,7 +23,7 @@ function generateSurface(xmlDataString) {
 
     const material = new THREE.MeshBasicMaterial( {
         color: 0x777777,
-        // wireframe: true
+        wireframe: true
     } );
 
     const mesh = new THREE.Mesh( geometry, material );
