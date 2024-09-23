@@ -4,10 +4,9 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'OrbitControls';
 
-
-import readLocalFile from "./modules/readLocalFile.mjs";
-import xmlToThreeSurface from './modules/xmlToThreeSurface.mjs';
-import cameraSetup from './modules/cameraSetup.mjs';
+import readLocalFile from "./modules/readLocalFile.js";
+import xmlToThreeSurface from './modules/xmlToThreeSurface.js';
+import cameraSetup from './modules/cameraSetup.js';
 
 
 

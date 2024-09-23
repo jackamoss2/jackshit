@@ -1,6 +1,6 @@
 // takes XML format Surface object and returns array of point numbers
-import setCenterVertex from './setCenterVertex.mjs';
-import moveSurfacePoints from './moveSurfacePoints.mjs';
+import setCenterVertex from './setCenterVertex.js';
+import moveSurfacePoints from './moveSurfacePoints.js';
 
 function xmlExtractSurfacePoints (xmlSurface) {
 

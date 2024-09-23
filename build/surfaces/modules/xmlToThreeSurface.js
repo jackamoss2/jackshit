@@ -2,9 +2,9 @@
 
 import * as THREE from 'three';
 
-import xmlExtractSurface from './xmlExtractSurface.mjs';
-import xmlExtractSurfacePoints from './xmlExtractSurfacePoints.mjs';
-import xmlExtractSurfaceFaces from './xmlExtractSurfaceFaces.mjs';
+import xmlExtractSurface from './xmlExtractSurface.js';
+import xmlExtractSurfacePoints from './xmlExtractSurfacePoints.js';
+import xmlExtractSurfaceFaces from './xmlExtractSurfaceFaces.js';
 
 
 
