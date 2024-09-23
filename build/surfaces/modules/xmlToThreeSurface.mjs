@@ -14,16 +14,16 @@ function generateSurface(xmlDataString) {
     // https://threejs.org/docs/#api/en/core/BufferGeometry
     const geometry = new THREE.BufferGeometry();
 
-    const vertices = new Float32Array(xmlExtractSurfacePoints(xmlSurface));
+    const points = new Float32Array(xmlExtractSurfacePoints(xmlSurface));
 
     const indices = xmlExtractSurfaceFaces(xmlSurface);
 
     geometry.setIndex(indices);
-    geometry.setAttribute('position', new THREE.BufferAttribute(vertices, 3));
+    geometry.setAttribute('position', new THREE.BufferAttribute(points, 3));
 
     const material = new THREE.MeshBasicMaterial( {
-    color: 0xff0000,
-    wireframe: true
+        color: 0x777777,
+        // wireframe: true
     } );
 
     const mesh = new THREE.Mesh( geometry, material );

@@ -8,12 +8,11 @@ import { OrbitControls } from 'OrbitControls';
 import readLocalFile from "./modules/readLocalFile.mjs";
 import xmlToThreeSurface from './modules/xmlToThreeSurface.mjs';
 import cameraSetup from './modules/cameraSetup.mjs';
-import centerVertex from './modules/centerVertex.mjs';
 
 
 
 
-const dataSource = "2_Faces copy.xml";
+const dataSource = "Wilsonville_Ramp.xml";
 const xmlDataString = readLocalFile("./geometry/" + dataSource);
 
 
@@ -23,14 +22,13 @@ const scene = new THREE.Scene();
 scene.background = new THREE.Color( 0x202020 );
 const renderer = new THREE.WebGLRenderer();
 
-const camera = cameraSetup("./geometry/" + xmlDataString);
+const camera = cameraSetup(xmlDataString);
 // controls setup
 const controls = new OrbitControls(camera, renderer.domElement);
 // controls.target = new THREE.Vector3(centerVertex(xmlDataString));
 
 
-const center = centerVertex(xmlDataString);
-controls.target = new THREE.Vector3(center[0],center[1],center[2]);
+controls.target = new THREE.Vector3(0, 0, 0);
 controls.update();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
@@ -75,22 +73,6 @@ scene.add(dirLight);
 function animate() {
 	renderer.render( scene, camera );
 };
-
-
-
-
-// insert geometry
-// const geometry = new THREE.BoxGeometry( 1, 1, 1 );
-// const material = new THREE.MeshStandardMaterial( {
-//     color: 0xffaa55,
-//     // wireframe: true
-// } );
-// const cube = new THREE.Mesh( geometry, material );
-// scene.add( cube );
-
-
-
-
 
 
 const mesh = xmlToThreeSurface(xmlDataString);
