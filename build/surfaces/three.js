@@ -11,7 +11,8 @@ import cameraSetup from './modules/cameraSetup.js';
 
 
 
-const dataSource = "Wilsonville_Ramp.xml";
+// const dataSource = "Wilsonville_Ramp.xml";
+const dataSource = "EG_Harvey.xml";
 const xmlDataString = readLocalFile("./geometry/" + dataSource);
 
 
