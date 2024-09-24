@@ -2,7 +2,8 @@
 // https://medium.com/@matiasortizdiez/beginners-introduction-to-natural-simulation-in-python-ii-simulating-a-water-ripple-809356ffcb43
 
 import * as THREE from 'three';
-import { OrbitControls } from 'OrbitControls';
+// import { OrbitControls } from 'OrbitControls';
+import CameraControls from 'camera-controls';
 
 import readLocalFile from "./modules/readLocalFile.js";
 import xmlToThreeSurface from './modules/xmlToThreeSurface.js';
@@ -24,12 +25,33 @@ const renderer = new THREE.WebGLRenderer();
 
 const camera = cameraSetup(xmlDataString);
 // controls setup
-const controls = new OrbitControls(camera, renderer.domElement);
+// const controls = new OrbitControls(camera, renderer.domElement);
 // controls.target = new THREE.Vector3(centerVertex(xmlDataString));
+// controls.target = new THREE.Vector3(0, 0, 0);
+// controls.update();
 
+CameraControls.install( { THREE: THREE } );
 
-controls.target = new THREE.Vector3(0, 0, 0);
-controls.update();
+// snip ( init three scene... )
+const clock = new THREE.Clock();
+const cameraControls = new CameraControls( camera, renderer.domElement );
+
+( function anim () {
+
+	// snip
+	const delta = clock.getDelta();
+	const hasControlsUpdated = cameraControls.update( delta );
+
+	requestAnimationFrame( anim );
+
+	// you can skip this condition to render though
+	if ( hasControlsUpdated ) {
+
+		renderer.render( scene, camera );
+
+	}
+
+} )();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
 renderer.setAnimationLoop(animate);
