@@ -4,7 +4,6 @@ function xmlExtractSurfaceFaces (xmlSurface) {
 
     const faceCollection = xmlSurface.getElementsByTagName("F"); // type htmlCollection
     const faceNodes = Array.from(faceCollection);
-    console.log(faceNodes);
 
     for (let i = 0; i < faceNodes.length; i++) {
         const faceString = faceNodes[i].firstChild.data;
@@ -13,7 +12,6 @@ function xmlExtractSurfaceFaces (xmlSurface) {
             // if (faceNodes[i].getAttribute("i") != 1) // "i" attribute specifies that the face is part of the surface, but is not visible
             //     faces.push(parseFloat(faceStringArray[i]));
             faces.push(parseFloat(faceStringArray[i]));
-            // console.log(faceStringArray[i]);
         }
     }
     

@@ -28,7 +28,6 @@ function xmlExtractSurfacePoints (xmlSurface) {
     // shift all points to origin
     points = moveSurfacePoints(points, centerPoint);
 
-    console.log(points);
     return points;
 }
 

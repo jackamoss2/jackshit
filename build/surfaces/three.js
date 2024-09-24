@@ -29,6 +29,8 @@ const controls = new OrbitControls(camera, renderer.domElement);
 
 
 controls.target = new THREE.Vector3(0, 0, 0);
+
+
 controls.update();
 
 renderer.setSize(window.innerWidth, window.innerHeight);
